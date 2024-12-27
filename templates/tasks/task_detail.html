@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
 <h1>{{ task.title }}</h1>
 <p>{{ task.description }}</p>
-<p><strong>Category:</strong> {{ task.category.name }}</p>
-<a href="/tasks/" class="btn btn-secondary">Back to List</a>
+<p>Category: {{ task.category.name }}</p>
+<a href="/tasks/">Back to list</a>
 {% endblock %}
