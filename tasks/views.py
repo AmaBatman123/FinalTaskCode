@@ -10,11 +10,6 @@ def main_view(request):
     if request.method == 'GET':
         return render(request, "base.html")
 
-
-def hello_view(request):
-    return HttpResponse("Hello, World!")
-
-
 def tasks_list_view(request):
     if request.method == 'GET':
         limit = 5
@@ -66,6 +61,6 @@ def task_create_view(request):
         form = TaskForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect("/tasks/")
+            return redirect("/tasks")
         categories = Category.objects.all()
         return render(request, "tasks/task_create.html", context={"form": form, "categories": categories})

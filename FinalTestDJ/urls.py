@@ -20,7 +20,7 @@ from tasks.views import tasks_list_view, task_details_view, task_create_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', tasks_list_view, name='tasks_list'),
-    path('<int:task_id>/', task_details_view, name='task_details'),
-    path('create/', task_create_view, name='task_create'),
+    path('tasks/', tasks_list_view, name='tasks_list'),  # Список задач
+    path('tasks/<int:task_id>/', task_details_view, name='task_details'),  # Детали задачи
+    path('tasks/create/', task_create_view, name='task_create'),  # Создание задачи
 ]
